@@ -60,8 +60,17 @@ namespace '/api' do
     end
 
     ## UPDATE A CONTACT
-    get '/contacts/:id/edit' do
-      json({ message: "You've reached the /update endpoint." })
+    post '/contacts/:id/edit' do
+      contact = Contact.find(params[:id])
+      if contact.update_attributes(first_name: params[:first_name],
+        last_name: params[:last_name],
+        email: params[:email],
+        phone_work: params[:phone_work],
+        phone_personal: params[:phone_personal])
+        json({ message: "Success", contact: contact })
+      else
+        json({message: "Update failed"})
+      end
     end
 
   end

@@ -2,6 +2,7 @@
 
   <h1>Contact List</h1>
 
+  <h2 id="success">Contact successfully updated.</h2>
   <form id="add-contact-form" action="/api/v1/contacts" method="post">
     <strong>ADD A CONTACT</strong>
     <label>First Name<br /><input type="text" name="first_name" /></label>
@@ -13,18 +14,19 @@
   </form>
 
 
-  <form id="edit-contact-form" action="/api/v1/update" method="get" class="hidden">
+  <form id="edit-contact-form" action="" method="get" class="hidden">
     <strong>EDIT A CONTACT</strong>
-    <label>First Name<br /><input type="text" name="first_name" /></label>
-    <label>Last Name<br /><input type="text" name="last_name"/></label>
-    <label>Email<br /><input type="email" name="email"/></label>
-    <label>Work Phone<br /><input type="text" name="phone_work"/></label>
-    <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
+    <label>First Name<br /><input type="text" name="first_name" id="edit_first_name"/></label>
+    <label>Last Name<br /><input type="text" name="last_name" id="edit_last_name"/></label>
+    <label>Email<br /><input type="email" name="email" id="edit_email"/></label>
+    <label>Work Phone<br /><input type="text" name="phone_work" id="edit_phone_work"/></label>
+    <label>Personal Phone<br /><input type="text" name="phone_personal" id="edit_phone_personal"/></label>
     <input type="submit" name="Submit" class="button"/>
   </form>
 
   <table id="contacts">
     <thead>
+      <th></th>
       <th>Name</th>
       <th>Email</th>
       <th>Work Phone</th>
