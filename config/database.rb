@@ -22,7 +22,7 @@ configure :production do
     username: "xkaqxqtaxkahkb",
     password: "rAGVdPW7IwgbDasyIMuEqmuRdD",
     database: "d8htpoom5j4agf")
-
+  }
 end
 
 configure do
