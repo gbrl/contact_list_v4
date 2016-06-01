@@ -11,21 +11,23 @@
 </form>
 
 
-<form id="add-contact-form">
+<form id="add-contact-form" action="/api/v1/create" method="get">
   <strong>ADD A CONTACT</strong>
-  <label>First Name<br /><input type="text" /></label>
-  <label>Last Name<br /><input type="text" /></label>
-  <label>Email<br /><input type="email" /></label>
-  <label>Phone<br /><input type="text" /></label>
+  <label>First Name<br /><input type="text" name="first_name" /></label>
+  <label>Last Name<br /><input type="text"  name="last_name"/></label>
+  <label>Email<br /><input type="email" name="email"/></label>
+  <label>Work Phone<br /><input type="text" name="phone_work"/></label>
+  <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
   <input type="submit" name="Submit" class="button"/>
 </form>
 
-<form id="edit-contact-form">
+<form id="edit-contact-form" action="/api/v1/update" method="get">>
   <strong>EDIT A CONTACT</strong>
-  <label>First Name<br /><input type="text" /></label>
-  <label>Last Name<br /><input type="text" /></label>
-  <label>Email<br /><input type="email" /></label>
-  <label>Phone<br /><input type="text" /></label>
+  <label>First Name<br /><input type="text" name="first_name" /></label>
+  <label>Last Name<br /><input type="text"  name="last_name"/></label>
+  <label>Email<br /><input type="email" name="email"/></label>
+  <label>Work Phone<br /><input type="text" name="phone_work"/></label>
+  <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
   <input type="submit" name="Submit" class="button"/>
 </form>
 
