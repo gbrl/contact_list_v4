@@ -11,7 +11,16 @@
 </form>
 
 
-<form id="add-contact-form" action="/api/v1/create" method="get">
+<table id="contacts">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Work Phone</th>
+    <th>Work Personal</th>
+  </thead>
+</table>
+
+<form id="add-contact-form" action="/api/v1/contacts" method="post">
   <strong>ADD A CONTACT</strong>
   <label>First Name<br /><input type="text" name="first_name" /></label>
   <label>Last Name<br /><input type="text"  name="last_name"/></label>
@@ -21,7 +30,7 @@
   <input type="submit" name="Submit" class="button"/>
 </form>
 
-<form id="edit-contact-form" action="/api/v1/update" method="get">>
+<form id="edit-contact-form" action="/api/v1/update" method="get">
   <strong>EDIT A CONTACT</strong>
   <label>First Name<br /><input type="text" name="first_name" /></label>
   <label>Last Name<br /><input type="text"  name="last_name"/></label>
@@ -30,5 +39,6 @@
   <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
   <input type="submit" name="Submit" class="button"/>
 </form>
+
 
 </section>

@@ -13,25 +13,53 @@ end
 namespace '/api' do
   namespace '/v1' do
 
+    ## BASE ENTRY POINT
     get '/' do
       json({ message: "Welcome to the Contact List API" })
     end
 
-    get '/create' do
-      json(params)
+    ## LIST ALL CONTACTS
+    get '/contacts' do
+     contacts = Contact.all
+     json({message: "Success", contacts: contacts})
     end
 
-    get '/update' do
-      json({ message: "You've reached the /update endpoint." })
-    end
-
-    get '/destroy' do
+    ## DESTROY CONTACT
+    delete '/contacts/:id' do
       json({ message: "You've reached the /destroy endpoint." })
     end
 
-    get '/list' do
-      contacts = Contact.all
-      json({message: "You've reached the /list endpoint.", contacts: contacts})
+    ## SHOW ONE CONTACT
+    get '/contacts/:id' do
+     begin
+       Contact.find(params[:id]).to_json
+     rescue ActiveRecord::RecordNotFound => error
+       STDERR.puts error
+       status 404
+     end
+    end
+
+    ## ADD ONE CONTACT
+    post '/contacts/' do
+      new_contact = Contact.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      phone_work: params[:phone_work],
+      phone_personal: params[:phone_personal])
+
+      if new_contact.valid?
+        new_contact.save
+        contact = Contact.last
+        json({ message: "Success", contact: contact })
+      else
+        json({ message: new_contact.errors })
+      end
+    end
+
+    ## UPDATE A CONTACT
+    get '/contacts/:id/edit' do
+      json({ message: "You've reached the /update endpoint." })
     end
 
   end
