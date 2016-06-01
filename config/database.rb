@@ -21,7 +21,7 @@ configure :production do
     host:     "ec2-54-243-204-221.compute-1.amazonaws.com",
     username: "xkaqxqtaxkahkb",
     password: "rAGVdPW7IwgbDasyIMuEqmuRdD",
-    database: "d8htpoom5j4agf")
+    database: "d8htpoom5j4agf"
   }
 end
 
