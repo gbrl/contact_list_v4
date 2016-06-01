@@ -11,6 +11,7 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 gem "sinatra-cross_origin", "~> 0.3.1"
+
 gem 'sass'
 
 # These gems are only installed when run as `bundle install --without production`
