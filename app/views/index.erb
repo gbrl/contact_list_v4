@@ -1,45 +1,37 @@
 <section id="wrap">
 
-<h1>Contact List</h1>
+  <h1>Contact List</h1>
+
+  <form id="add-contact-form" action="/api/v1/contacts" method="post">
+    <strong>ADD A CONTACT</strong>
+    <label>First Name<br /><input type="text" name="first_name" /></label>
+    <label>Last Name<br /><input type="text" name="last_name"/></label>
+    <label>Email<br /><input type="email" name="email"/></label>
+    <label>Work Phone<br /><input type="text" name="phone_work"/></label>
+    <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
+    <input type="submit" name="Submit" class="button"/>
+  </form>
 
 
-<form id="find-contact-form">
-  <strong>FIND A CONTACT</strong>
-  <label>Name<br />
-    <select></select>
-  </label>
-</form>
+  <form id="edit-contact-form" action="/api/v1/update" method="get" class="hidden">
+    <strong>EDIT A CONTACT</strong>
+    <label>First Name<br /><input type="text" name="first_name" /></label>
+    <label>Last Name<br /><input type="text" name="last_name"/></label>
+    <label>Email<br /><input type="email" name="email"/></label>
+    <label>Work Phone<br /><input type="text" name="phone_work"/></label>
+    <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
+    <input type="submit" name="Submit" class="button"/>
+  </form>
 
-
-<table id="contacts">
-  <thead>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Work Phone</th>
-    <th>Work Personal</th>
-    <th></th>
-  </thead>
-</table>
-
-<form id="add-contact-form" action="/api/v1/contacts" method="post">
-  <strong>ADD A CONTACT</strong>
-  <label>First Name<br /><input type="text" name="first_name" /></label>
-  <label>Last Name<br /><input type="text"  name="last_name"/></label>
-  <label>Email<br /><input type="email" name="email"/></label>
-  <label>Work Phone<br /><input type="text" name="phone_work"/></label>
-  <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
-  <input type="submit" name="Submit" class="button"/>
-</form>
-
-<form id="edit-contact-form" action="/api/v1/update" method="get">
-  <strong>EDIT A CONTACT</strong>
-  <label>First Name<br /><input type="text" name="first_name" /></label>
-  <label>Last Name<br /><input type="text"  name="last_name"/></label>
-  <label>Email<br /><input type="email" name="email"/></label>
-  <label>Work Phone<br /><input type="text" name="phone_work"/></label>
-  <label>Personal Phone<br /><input type="text" name="phone_personal"/></label>
-  <input type="submit" name="Submit" class="button"/>
-</form>
+  <table id="contacts">
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Work Phone</th>
+      <th>Work Personal</th>
+      <th></th>
+    </thead>
+  </table>
 
 
 </section>

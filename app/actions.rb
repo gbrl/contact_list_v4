@@ -25,7 +25,7 @@ namespace '/api' do
     end
 
     ## DESTROY CONTACT
-    delete '/contacts/:id' do
+    post '/contacts/:id/destroy' do
       contact = Contact.find(params[:id])
       contact.destroy
       json({message: "Success", contact: contact})
@@ -42,7 +42,7 @@ namespace '/api' do
     end
 
     ## ADD ONE CONTACT
-    post '/contacts/' do
+    post '/contacts' do
       new_contact = Contact.new(
       first_name: params[:first_name],
       last_name: params[:last_name],

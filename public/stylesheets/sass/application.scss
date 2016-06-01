@@ -10,6 +10,14 @@ form {
   background-color: #efeeaa;
 }
 
+table tr td:last-child a {
+  float: right;
+  margin: 10px
+}
+
+table tr td {padding-left: 10px}
+
+table tr:nth-child(odd) {background-color: #eee}
 
 /* HELPER CSS */
 
