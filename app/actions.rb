@@ -18,7 +18,7 @@ namespace '/api' do
     end
 
     get '/create' do
-      json({ message: "You've reached the /create endpoint." })
+      json(params)
     end
 
     get '/update' do
@@ -30,7 +30,8 @@ namespace '/api' do
     end
 
     get '/list' do
-      json({ message: "You've reached the /list endpoint." })
+      contacts = Contact.all
+      json({message: "You've reached the /list endpoint.", contacts: contacts})
     end
 
   end
