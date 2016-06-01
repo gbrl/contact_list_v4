@@ -15,6 +15,14 @@ configure :production do
   # environment variable. This is a feature of sinatra/activerecord support.
   #
   # If you're deploying to Heroku this will be set automatically.
+
+  set :database, {
+    adapter:  "postgresql",
+    host:     "ec2-54-243-204-221.compute-1.amazonaws.com",
+    username: "xkaqxqtaxkahkb",
+    password: "rAGVdPW7IwgbDasyIMuEqmuRdD",
+    database: "d8htpoom5j4agf")
+
 end
 
 configure do
