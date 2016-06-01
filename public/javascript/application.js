@@ -6,7 +6,7 @@ $(document).ready(function() {
     data["contacts"].forEach(addContactToTable);
 
     // SETUP DELETE ACTION
-    $("a.destroy").on("click", function(e){
+    $("table").on("click", "a.destroy", function(e){
       e.preventDefault();
       var $row = $(this).closest('tr');
       var contact_id = $(this).data("id");
@@ -18,7 +18,7 @@ $(document).ready(function() {
       });
     });
 
-    $("a.edit").on("click", function(e){
+    $("table").on("click", "a.edit", function(e){
         e.preventDefault();
         var row_data = new Array;
         $(this).closest("tr").children("td").each(function(){
@@ -53,6 +53,8 @@ $(document).ready(function() {
       .done(function( data ) {
         if( data["message"] === "Success" ) {
           addContactToTable(data["contact"]);
+          $("#add-success").fadeIn().fadeOut();
+          $("#add-contact-form").trigger("reset");
         }
       });
   });
@@ -64,12 +66,13 @@ $(document).ready(function() {
     $.post( action, $(this).serialize())
       .done(function( data ) {
         if( data["message"] === "Success" ) {
-          $("#success").fadeIn();
+          $("#update-success").fadeIn().fadeOut();
           $("#edit-contact-form").fadeOut();
           $("#add-contact-form").fadeIn();
           $.get( "/api/v1/contacts", function(data) {
             contactTable.children("tr").remove();
             data["contacts"].forEach(addContactToTable);
+            $("#edit-contact-form").trigger("reset");
           });
         }
       });

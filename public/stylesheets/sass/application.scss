@@ -2,7 +2,7 @@ body {padding: 4%}
 
 strong, h1 {margin-bottom: 20px; display: block;}
 
-#success {display: none}
+#add-success, #update-success {display: none; color: green}
 
 form {
   border: 10px solid #eee;
