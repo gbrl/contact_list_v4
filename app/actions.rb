@@ -26,7 +26,9 @@ namespace '/api' do
 
     ## DESTROY CONTACT
     delete '/contacts/:id' do
-      json({ message: "You've reached the /destroy endpoint." })
+      contact = Contact.find(params[:id])
+      contact.destroy
+      json({message: "Success", contact: contact})
     end
 
     ## SHOW ONE CONTACT

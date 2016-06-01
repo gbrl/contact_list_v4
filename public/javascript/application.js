@@ -8,7 +8,7 @@ $(document).ready(function() {
   });
 
   function addContactToTable(contact){
-    contactTable.append("<tr><td>" + contact["first_name"] + contact["last_name"] + "</td><td>" + contact["email"] + "</td><td>" + contact["phone_work"] + "</td><td>" + contact["phone_personal"] + "</td></tr>")
+    contactTable.append("<tr><td>" + contact["first_name"] + contact["last_name"] + "</td><td>" + contact["email"] + "</td><td>" + contact["phone_work"] + "</td><td>" + contact["phone_personal"] + "</td><td><a href='#' class='button alert' data-id='" + contact["id"] + "'>Delete</a></td></tr>")
   }
 
 });
